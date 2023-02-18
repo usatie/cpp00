@@ -23,13 +23,11 @@ int	main(int argc, char *argv[])
 	if ( argc < 2 )
 	{
 		megahpone(MSG_DFL) ;
-		std::cout << "\n" ;
-		return 0 ;
 	}
-	for ( int i = 1 ; i < argc ; ++i )
+	else
 	{
-		if ( i > 1 ) std::cout << " " ;
-		megahpone(argv[i]) ;
+		for ( int i = 1 ; i < argc ; ++i )
+			megahpone(argv[i]) ;
 	}
 	std::cout << "\n" ;
 }
