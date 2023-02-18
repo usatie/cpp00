@@ -6,6 +6,14 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = *.cpp
 OBJS = $(SRCS: %.o=%.cpp)
 
+next:
+	prefix=ex
+	highest=$$(ls -1d $(prefix)* | sort -n | tail -n 1);\
+	num=$${highest#$(prefix)};\
+	next_num=$$(printf '%02d' $$(shell echo $$(num) + 1 | bc));\
+	mkdir $(prefix)$$next_num
+	
+
 run: $(NAME)
 	./$(NAME)
 
