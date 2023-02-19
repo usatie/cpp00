@@ -2,15 +2,18 @@
 #include <iostream>
 #include <ctime>
 
+// Definition part of class static variables
 int	Account::_nbAccounts;
 int	Account::_totalAmount;
 int	Account::_totalNbDeposits;
 int	Account::_totalNbWithdrawals;
 
+// These functions are never used in tests.cpp
 int	Account::getNbAccounts( void ) { return _nbAccounts ; }
 int	Account::getTotalAmount( void ) { return _totalAmount ; }
 int	Account::getNbDeposits( void ) { return _totalNbDeposits ; }
 int	Account::getNbWithdrawals( void ) { return _totalNbWithdrawals ; }
+
 void	Account::displayAccountsInfos( void )
 {
 	//[19920104_091532] accounts:8;total:20049;deposits:0;withdrawals:0
@@ -25,6 +28,7 @@ void	Account::displayAccountsInfos( void )
 
 void	Account::_displayTimestamp( void )
 {
+	//[19920104_091532] 
 	const char *format = "%Y%m%d_%H%M%S" ;
 	std::time_t t = std::time(0) ;
 	char cstr[128] ;
@@ -38,6 +42,7 @@ Account::Account( int initial_deposit ):
 	_nbDeposits(0),
 	_nbWithdrawals(0)
 {
+	//[19920104_091532] index:0;amount:42;created
 	_totalAmount += _amount ;
 	Account::_displayTimestamp() ;
 	std::cout
@@ -52,6 +57,7 @@ Account::Account(void):
 	_nbDeposits(0),
 	_nbWithdrawals(0)
 {
+	//[19920104_091532] index:0;amount:42;created
 	Account::_displayTimestamp() ;
 	std::cout
 		<< "index:" << _accountIndex << ";"
@@ -60,9 +66,9 @@ Account::Account(void):
 }
 
 Account::~Account( void ) {
+	//[19920104_091532] index:0;amount:47;closed
 	_nbAccounts-- ;
 	_totalAmount -= _amount ;
-	// [19920104_091532] index:0;amount:47;closed
 	Account::_displayTimestamp() ;
 	std::cout
 		<< "index:" << _accountIndex << ";"
@@ -72,11 +78,11 @@ Account::~Account( void ) {
 }
 
 void	Account::makeDeposit( int deposit ) {
+	//[19920104_091532] index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
 	_nbDeposits++ ;
 	_totalNbDeposits++ ;
 	_amount += deposit ;
 	_totalAmount += deposit ;
-	// [19920104_091532] index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
 	Account::_displayTimestamp() ;
 	std::cout
 		<< "index:" << _accountIndex << ";"
@@ -114,6 +120,7 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 	return false ;
 }
 
+// This function is never used in tests.cpp, why exist?
 int		Account::checkAmount( void ) const
 {
 	return _amount ;
