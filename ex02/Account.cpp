@@ -37,8 +37,8 @@ void	Account::_displayTimestamp( void )
 }
 
 Account::Account( int initial_deposit ):
-	_amount(initial_deposit),
 	_accountIndex(_nbAccounts++),
+	_amount(initial_deposit),
 	_nbDeposits(0),
 	_nbWithdrawals(0)
 {
@@ -52,8 +52,8 @@ Account::Account( int initial_deposit ):
 }
 
 Account::Account(void):
-	_amount(0),
 	_accountIndex(_nbAccounts++),
+	_amount(0),
 	_nbDeposits(0),
 	_nbWithdrawals(0)
 {
