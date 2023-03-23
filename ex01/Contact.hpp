@@ -3,6 +3,7 @@
 # include <string>
 class Contact {
 public:
+	Contact () ;
 	std::string first_name ;
 	std::string last_name ;
 	std::string nickname ;

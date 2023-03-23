@@ -1,4 +1,4 @@
-NAME = program
+NAME = AwesomePhoneBook
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -15,3 +15,6 @@ $(NAME) : $(OBJS)
 clean:
 	$(RM) *.o
 	$(RM) $(NAME)
+
+test: $(NAME)
+	cat <<EOF
