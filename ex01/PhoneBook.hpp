@@ -8,8 +8,8 @@
 class PhoneBook {
 private:
 	Contact contacts[PHONEBOOK_SIZE] ;
-	std::size_t		size ;
-	std::size_t		index ;
+	int		size ;
+	int		index ;
 public:
 	PhoneBook ();
 	int	add();

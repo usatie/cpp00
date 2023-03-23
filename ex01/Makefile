@@ -3,8 +3,8 @@ NAME = AwesomePhoneBook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = *.cpp
-OBJS = $(SRCS: %.o=%.cpp)
+SRCS = $(wildcard *.cpp)
+OBJS = $(SRCS:%.cpp=%.o)
 
 run: $(NAME)
 	./$(NAME)
