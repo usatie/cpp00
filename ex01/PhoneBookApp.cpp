@@ -1,8 +1,7 @@
 #include "PhoneBookApp.hpp"
 #include "PhoneBook.hpp"
+#include "readutil.hpp"
 #include <iostream>
-
-static int getline(const std::string & prompt, std::string & s) ;
 
 PhoneBookApp::PhoneBookApp() {}
 
@@ -28,16 +27,4 @@ int	PhoneBookApp::run()
 			std::cout << "No such command: " << cmd << "\n" ;
 	}
 	return EXIT_FAILURE ;
-}
-
-static int getline(const std::string & prompt, std::string & s)
-{
-	std::cout << prompt ;
-	while ( std::getline(std::cin, s) )
-	{
-		if ( s != "" )
-			return SUCCESS ;
-		std::cout << prompt ;
-	}
-	return ERROR;
 }

@@ -7,9 +7,9 @@
 
 class PhoneBook {
 private:
-	Contact contacts[PHONEBOOK_SIZE] ;
-	int		size ;
-	int		index ;
+	Contact _contacts[PHONEBOOK_SIZE] ;
+	int		_size ;
+	int		_next_index ;
 public:
 	PhoneBook ();
 	int	add();
